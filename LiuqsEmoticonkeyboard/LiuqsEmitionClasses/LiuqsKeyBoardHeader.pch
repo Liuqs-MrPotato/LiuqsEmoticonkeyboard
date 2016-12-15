@@ -1,0 +1,43 @@
+//
+//  LiuqsKeyBoardHeader.pch
+//  LiuqsEmoticonkeyboard
+//
+//  Created by 刘全水 on 2016/12/3.
+//  Copyright © 2016年 刘全水. All rights reserved.
+//
+
+#ifndef LiuqsKeyBoardHeader_pch
+#define LiuqsKeyBoardHeader_pch
+
+#import "LiuqsEmoticonKeyBoard.h"
+#import "UIImage+extension.h"
+#import "UIView+Extension.h"
+#import "NSAttributedString+LiuqsExtension.h"
+#import "YYText.h"
+#import "YYImage.h"
+#import "LiuqsDecoder.h"
+
+#define screenW [UIScreen mainScreen].bounds.size.width
+#define screenH [UIScreen mainScreen].bounds.size.height
+///topbar
+#define topBarH   TextViewH - 10
+#define TextViewW screenW - (screenW * 55 / 320)
+#define TextViewH 36.5
+#define emotionBtnW 36.5
+#define emotionBtnH 36.5
+#define toolBarFrameDown CGRectMake(0, 0, screenW, topBarH)
+#define toolBarFrameUPBaseEmotion CGRectMake(0, screenH - toobarH - EMOJI_KEYBOARD_HEIGHT, screenW, toobarH)
+
+//keyBoard
+#define keyBoardTipTime 0.3
+#define keyBoardH (4 * screenW * 0.0875 +(3 + 1) * ((screenW - 7 * screenW * 0.0875 ) / 8) + 20)
+#define emojiCount 21
+#define KrowCount 7
+#define emotionW screenW * 0.0875
+#define rows 3
+#define pageH (screenW - KrowCount * emotionW) / (KrowCount + 1)
+
+//颜色
+#define ColorRGB(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
+
+#endif /* LiuqsKeyBoardHeader_pch */
