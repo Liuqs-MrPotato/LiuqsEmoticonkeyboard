@@ -47,8 +47,14 @@
     [self addSubviews];
     self.dataSource = [NSMutableArray array];
     
+    [self initData];
+}
+
+
+- (void)initData {
+
     for (int i = 0; i < 2; i ++) {
-      
+        
         ChatMessageFrame *cellFrame = [[ChatMessageFrame alloc]init];
         ChatMessage *message = [[ChatMessage alloc]init];
         message.userType = i % 2 ? userTypeMe : userTypeOther;
@@ -59,7 +65,6 @@
         [self.dataSource addObject:cellFrame];
     }
     [self.chatList reloadData];
-    
 }
 
 - (void)addSubviews {
@@ -116,7 +121,7 @@
 - (void)updateChatList {
 
     CGFloat offSetY = self.chatList.contentSize.height - self.chatList.Ex_height;
-    //判断是否需要滚动到底部，会有一个误差值
+    //判断是否需要滚动到底部，给一个误差值
     if (self.chatList.contentOffset.y > offSetY - 5 || self.chatList.contentOffset.y > offSetY + 5) {
         
         self.chatList.Ex_height = self.keyboard.topicBar.Ex_y - 64;

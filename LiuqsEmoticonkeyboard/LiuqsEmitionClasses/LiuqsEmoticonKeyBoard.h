@@ -16,13 +16,17 @@
  */
 - (void)sendButtonEventsWithPlainString:(NSString *)PlainStr;
 
+/*
+ * 代理方法：键盘改变的代理事件
+ * 用来更新父视图的UI，比如跟随键盘改变的列表高度
+ */
 - (void)keyBoardChanged;
 
 @end
 
 @interface LiuqsEmoticonKeyBoard : UIView
 /*
- * 输入框
+ * 输入框，和topbar上的是同一个输入框
  */
 @property(nonatomic, strong) UITextView *textView;
 /*

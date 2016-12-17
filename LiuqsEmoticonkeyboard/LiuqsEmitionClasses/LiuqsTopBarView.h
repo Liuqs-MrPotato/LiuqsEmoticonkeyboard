@@ -41,7 +41,6 @@
  * 当前键盘的高度， 区分是文字键盘还是表情键盘
  */
 @property(nonatomic, assign) CGFloat CurrentKeyBoardH;
-
 /*
  * 用于主动触发输入框改变的方法
  */
