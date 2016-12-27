@@ -7,3 +7,4 @@ self.keyboard = [LiuqsEmoticonKeyBoard showKeyBoardInView:self.view];
 self.keyboard.delegate = self;  
 
 ```
+[简书地址](http://www.jianshu.com/p/d30be01c858f)
