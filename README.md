@@ -5,6 +5,5 @@
 ```
 self.keyboard = [LiuqsEmoticonKeyBoard showKeyBoardInView:self.view];
 self.keyboard.delegate = self;  
-
 ```
-[简书地址](http://www.jianshu.com/p/d30be01c858f)
+####具体详细的介绍请看简书文章：[简书地址](http://www.jianshu.com/p/d30be01c858f)
