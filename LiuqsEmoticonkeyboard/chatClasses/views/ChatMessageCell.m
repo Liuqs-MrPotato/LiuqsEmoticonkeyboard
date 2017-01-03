@@ -180,7 +180,6 @@ static UITableView *_tableview;
     }
 }
 
-
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
     
     if (action == @selector(copyText) || action == @selector(callBack)){
