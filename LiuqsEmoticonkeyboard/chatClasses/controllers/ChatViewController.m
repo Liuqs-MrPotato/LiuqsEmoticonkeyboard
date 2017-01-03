@@ -72,6 +72,7 @@
     self.keyboard = [LiuqsEmoticonKeyBoard showKeyBoardInView:self.view];
     self.keyboard.delegate = self;
     [self.view addSubview:self.chatList];
+    
 }
 
 - (void)initSomeThing {
@@ -86,6 +87,10 @@
 - (void)listTap {
 
     [self.keyboard hideKeyBoard];
+    UIMenuController *menuController = [UIMenuController sharedMenuController];
+    if (menuController.menuVisible) {
+        [menuController setMenuVisible:NO animated:YES];
+    }
 }
 
 #pragma mark ==== LiuqsEmotionKeyBoardDelegate ====
@@ -132,12 +137,32 @@
     }
 }
 
+//这个方法是判断字符串长度的中文字符是2 英文字符是1（没啥用）
+- (NSUInteger)textLength:(NSString *)text {
+    
+    NSUInteger Length = 0;
+    
+    for (NSUInteger i = 0; i < text.length; i++) {
+        
+        unichar Uchar = [text characterAtIndex: i];
+        
+        Length += isascii(Uchar) ? 1 : 2;
+    }
+    
+    return Length;
+}
+
 //滚动到底部
 - (void)ScrollTableViewToBottom {
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataSource.count - 1 inSection:0];
-    [self.chatList scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    if (self.dataSource.count - 1 >= 1) {
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataSource.count - 1 inSection:0];
+        [self.chatList scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    }
 }
+#pragma - mrak - 长按菜单事件
+
 
 #pragma mark ==== tabbleView 代理方法
 

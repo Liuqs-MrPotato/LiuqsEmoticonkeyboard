@@ -95,7 +95,7 @@
 }
 //添加子视图
 - (void)addSubviews {
-
+    
     [self addSubview:self.textView];
     [self addSubview:self.topLine];
     [self addSubview:self.bottomLine];
