@@ -15,7 +15,6 @@
 		732090B81DDA9A1E00C757FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732090B61DDA9A1E00C757FF /* LaunchScreen.storyboard */; };
 		732090C31DDA9A1E00C757FF /* LiuqsEmoticonkeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 732090C21DDA9A1E00C757FF /* LiuqsEmoticonkeyboardTests.m */; };
 		732090CE1DDA9A1E00C757FF /* LiuqsEmoticonkeyboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 732090CD1DDA9A1E00C757FF /* LiuqsEmoticonkeyboardUITests.m */; };
-		733941381E07CEAF00858AF7 /* LiuqsDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 733941371E07CEAF00858AF7 /* LiuqsDataTool.m */; };
 		734D0F7D1E00E67400A898B0 /* LiuqsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F711E00E67400A898B0 /* LiuqsButton.m */; };
 		734D0F7E1E00E67400A898B0 /* LiuqsEmoticonKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F731E00E67400A898B0 /* LiuqsEmoticonKeyBoard.m */; };
 		734D0F7F1E00E67400A898B0 /* LiuqsEmotionPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F751E00E67400A898B0 /* LiuqsEmotionPageView.m */; };
@@ -246,8 +245,6 @@
 		732090C91DDA9A1E00C757FF /* LiuqsEmoticonkeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiuqsEmoticonkeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		732090CD1DDA9A1E00C757FF /* LiuqsEmoticonkeyboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiuqsEmoticonkeyboardUITests.m; sourceTree = "<group>"; };
 		732090CF1DDA9A1E00C757FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		733941361E07CEAF00858AF7 /* LiuqsDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsDataTool.h; sourceTree = "<group>"; };
-		733941371E07CEAF00858AF7 /* LiuqsDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuqsDataTool.m; sourceTree = "<group>"; };
 		734D0F701E00E67400A898B0 /* LiuqsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsButton.h; sourceTree = "<group>"; };
 		734D0F711E00E67400A898B0 /* LiuqsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuqsButton.m; sourceTree = "<group>"; };
 		734D0F721E00E67400A898B0 /* LiuqsEmoticonKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsEmoticonKeyBoard.h; sourceTree = "<group>"; };
@@ -556,8 +553,6 @@
 				732090B61DDA9A1E00C757FF /* LaunchScreen.storyboard */,
 				732090B91DDA9A1E00C757FF /* Info.plist */,
 				732090A81DDA9A1E00C757FF /* Supporting Files */,
-				733941361E07CEAF00858AF7 /* LiuqsDataTool.h */,
-				733941371E07CEAF00858AF7 /* LiuqsDataTool.m */,
 			);
 			path = LiuqsEmoticonkeyboard;
 			sourceTree = "<group>";
@@ -1224,7 +1219,6 @@
 			files = (
 				735831181E022FD400A093FB /* UIView+Extension.m in Sources */,
 				7358316A1E0230D500A093FB /* YYTextParser.m in Sources */,
-				733941381E07CEAF00858AF7 /* LiuqsDataTool.m in Sources */,
 				735831171E022FD400A093FB /* UIImage+extension.m in Sources */,
 				735830FC1E02260100A093FB /* ChatViewController.m in Sources */,
 				734D0F7F1E00E67400A898B0 /* LiuqsEmotionPageView.m in Sources */,
