@@ -21,6 +21,7 @@
 		734D0F801E00E67400A898B0 /* LiuqsTopBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F781E00E67400A898B0 /* LiuqsTopBarView.m */; };
 		734D0F891E00F9F500A898B0 /* NSAttributedString+LiuqsExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F881E00F9F500A898B0 /* NSAttributedString+LiuqsExtension.m */; };
 		734D0F8C1E00FA6400A898B0 /* LiuqsTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F8B1E00FA6400A898B0 /* LiuqsTextAttachment.m */; };
+		735369591E1DE4C400F6F351 /* LiuqsMessageDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 735369581E1DE4C400F6F351 /* LiuqsMessageDataBase.m */; };
 		735830FC1E02260100A093FB /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735830FB1E02260100A093FB /* ChatViewController.m */; };
 		735831011E0226BF00A093FB /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831001E0226BF00A093FB /* ChatMessageCell.m */; };
 		735831041E0229B700A093FB /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831031E0229B700A093FB /* ChatMessage.m */; };
@@ -64,6 +65,13 @@
 		735831811E02312900A093FB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735831801E02312900A093FB /* CoreText.framework */; };
 		735831831E02313200A093FB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735831821E02313200A093FB /* CoreFoundation.framework */; };
 		735831851E02313D00A093FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735831841E02313D00A093FB /* UIKit.framework */; };
+		7371A0B51E1CE4DA006ACF31 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7371A0B41E1CE4DA006ACF31 /* CoreData.framework */; };
+		7371A0CA1E1CE676006ACF31 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7371A0C91E1CE676006ACF31 /* libsqlite3.tbd */; };
+		7371A0D81E1CE706006ACF31 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371A0CE1E1CE706006ACF31 /* FMDatabase.m */; };
+		7371A0D91E1CE706006ACF31 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371A0D01E1CE706006ACF31 /* FMDatabaseAdditions.m */; };
+		7371A0DA1E1CE706006ACF31 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371A0D21E1CE706006ACF31 /* FMDatabasePool.m */; };
+		7371A0DB1E1CE706006ACF31 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371A0D41E1CE706006ACF31 /* FMDatabaseQueue.m */; };
+		7371A0DC1E1CE706006ACF31 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371A0D71E1CE706006ACF31 /* FMResultSet.m */; };
 		73D408AC1DFE50A20085803E /* LiuqsEmotions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73D4081A1DFE50A20085803E /* LiuqsEmotions.plist */; };
 		73D409E21DFE7FFA0085803E /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73D409521DFE7FF90085803E /* 1.gif */; };
 		73D409E31DFE7FFA0085803E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D409531DFE7FF90085803E /* 1.png */; };
@@ -209,6 +217,7 @@
 		73D40A6F1DFE7FFA0085803E /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D409DF1DFE7FFA0085803E /* 8.png */; };
 		73D40A701DFE7FFA0085803E /* 9.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73D409E01DFE7FFA0085803E /* 9.gif */; };
 		73D40A711DFE7FFA0085803E /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D409E11DFE7FFA0085803E /* 9.png */; };
+		73F38D9E1E1F31CB00ABD533 /* LiuqsFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F38D9D1E1F31CB00ABD533 /* LiuqsFileManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +267,8 @@
 		734D0F881E00F9F500A898B0 /* NSAttributedString+LiuqsExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+LiuqsExtension.m"; sourceTree = "<group>"; };
 		734D0F8A1E00FA6400A898B0 /* LiuqsTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsTextAttachment.h; sourceTree = "<group>"; };
 		734D0F8B1E00FA6400A898B0 /* LiuqsTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuqsTextAttachment.m; sourceTree = "<group>"; };
+		735369571E1DE4C400F6F351 /* LiuqsMessageDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsMessageDataBase.h; sourceTree = "<group>"; };
+		735369581E1DE4C400F6F351 /* LiuqsMessageDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuqsMessageDataBase.m; sourceTree = "<group>"; };
 		735830FA1E02260100A093FB /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		735830FB1E02260100A093FB /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		735830FF1E0226BF00A093FB /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
@@ -338,6 +349,20 @@
 		735831801E02312900A093FB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		735831821E02313200A093FB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		735831841E02313D00A093FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7371A0B41E1CE4DA006ACF31 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7371A0C71E1CE66B006ACF31 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7371A0C91E1CE676006ACF31 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7371A0CD1E1CE706006ACF31 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		7371A0CE1E1CE706006ACF31 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		7371A0CF1E1CE706006ACF31 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		7371A0D01E1CE706006ACF31 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		7371A0D11E1CE706006ACF31 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		7371A0D21E1CE706006ACF31 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		7371A0D31E1CE706006ACF31 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		7371A0D41E1CE706006ACF31 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		7371A0D51E1CE706006ACF31 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		7371A0D61E1CE706006ACF31 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		7371A0D71E1CE706006ACF31 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		73D4081A1DFE50A20085803E /* LiuqsEmotions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LiuqsEmotions.plist; sourceTree = "<group>"; };
 		73D409521DFE7FF90085803E /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
 		73D409531DFE7FF90085803E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -483,6 +508,8 @@
 		73D409DF1DFE7FFA0085803E /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		73D409E01DFE7FFA0085803E /* 9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 9.gif; sourceTree = "<group>"; };
 		73D409E11DFE7FFA0085803E /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		73F38D9C1E1F31CB00ABD533 /* LiuqsFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsFileManager.h; sourceTree = "<group>"; };
+		73F38D9D1E1F31CB00ABD533 /* LiuqsFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuqsFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,6 +517,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7371A0CA1E1CE676006ACF31 /* libsqlite3.tbd in Frameworks */,
+				7371A0B51E1CE4DA006ACF31 /* CoreData.framework in Frameworks */,
 				735831851E02313D00A093FB /* UIKit.framework in Frameworks */,
 				735831831E02313200A093FB /* CoreFoundation.framework in Frameworks */,
 				735831811E02312900A093FB /* CoreText.framework in Frameworks */,
@@ -544,6 +573,7 @@
 				735831191E0230D500A093FB /* YYTextClasses */,
 				734D0F6F1E00E67400A898B0 /* LiuqsEmitionClasses */,
 				734D0F6E1E00E63300A898B0 /* chatClasses */,
+				7371A0CB1E1CE6DB006ACF31 /* dataBaseClass */,
 				732090AB1DDA9A1E00C757FF /* AppDelegate.h */,
 				732090AC1DDA9A1E00C757FF /* AppDelegate.m */,
 				732090AE1DDA9A1E00C757FF /* ViewController.h */,
@@ -766,6 +796,9 @@
 		735831771E0230F800A093FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7371A0C91E1CE676006ACF31 /* libsqlite3.tbd */,
+				7371A0C71E1CE66B006ACF31 /* libsqlite3.0.tbd */,
+				7371A0B41E1CE4DA006ACF31 /* CoreData.framework */,
 				735831841E02313D00A093FB /* UIKit.framework */,
 				735831821E02313200A093FB /* CoreFoundation.framework */,
 				735831801E02312900A093FB /* CoreText.framework */,
@@ -775,6 +808,36 @@
 				735831781E0230F800A093FB /* libz.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7371A0CB1E1CE6DB006ACF31 /* dataBaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				7371A0CC1E1CE706006ACF31 /* fmdb */,
+				735369571E1DE4C400F6F351 /* LiuqsMessageDataBase.h */,
+				735369581E1DE4C400F6F351 /* LiuqsMessageDataBase.m */,
+				73F38D9C1E1F31CB00ABD533 /* LiuqsFileManager.h */,
+				73F38D9D1E1F31CB00ABD533 /* LiuqsFileManager.m */,
+			);
+			path = dataBaseClass;
+			sourceTree = "<group>";
+		};
+		7371A0CC1E1CE706006ACF31 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				7371A0CD1E1CE706006ACF31 /* FMDatabase.h */,
+				7371A0CE1E1CE706006ACF31 /* FMDatabase.m */,
+				7371A0CF1E1CE706006ACF31 /* FMDatabaseAdditions.h */,
+				7371A0D01E1CE706006ACF31 /* FMDatabaseAdditions.m */,
+				7371A0D11E1CE706006ACF31 /* FMDatabasePool.h */,
+				7371A0D21E1CE706006ACF31 /* FMDatabasePool.m */,
+				7371A0D31E1CE706006ACF31 /* FMDatabaseQueue.h */,
+				7371A0D41E1CE706006ACF31 /* FMDatabaseQueue.m */,
+				7371A0D51E1CE706006ACF31 /* FMDB.h */,
+				7371A0D61E1CE706006ACF31 /* FMResultSet.h */,
+				7371A0D71E1CE706006ACF31 /* FMResultSet.m */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 		73D408191DFE50A20085803E /* Assets */ = {
@@ -1219,6 +1282,8 @@
 			files = (
 				735831181E022FD400A093FB /* UIView+Extension.m in Sources */,
 				7358316A1E0230D500A093FB /* YYTextParser.m in Sources */,
+				7371A0D91E1CE706006ACF31 /* FMDatabaseAdditions.m in Sources */,
+				7371A0DB1E1CE706006ACF31 /* FMDatabaseQueue.m in Sources */,
 				735831171E022FD400A093FB /* UIImage+extension.m in Sources */,
 				735830FC1E02260100A093FB /* ChatViewController.m in Sources */,
 				734D0F7F1E00E67400A898B0 /* LiuqsEmotionPageView.m in Sources */,
@@ -1229,6 +1294,7 @@
 				735831741E0230D500A093FB /* YYTextWeakProxy.m in Sources */,
 				734D0F8C1E00FA6400A898B0 /* LiuqsTextAttachment.m in Sources */,
 				732090AD1DDA9A1E00C757FF /* AppDelegate.m in Sources */,
+				7371A0DA1E1CE706006ACF31 /* FMDatabasePool.m in Sources */,
 				734D0F801E00E67400A898B0 /* LiuqsTopBarView.m in Sources */,
 				735831071E0229C500A093FB /* ChatMessageFrame.m in Sources */,
 				735831611E0230D500A093FB /* YYTextEffectWindow.m in Sources */,
@@ -1241,6 +1307,7 @@
 				735831701E0230D500A093FB /* UIView+YYText.m in Sources */,
 				735831661E0230D500A093FB /* YYTextMagnifier.m in Sources */,
 				735831041E0229B700A093FB /* ChatMessage.m in Sources */,
+				735369591E1DE4C400F6F351 /* LiuqsMessageDataBase.m in Sources */,
 				7358315F1E0230D500A093FB /* YYTextContainerView.m in Sources */,
 				7358315E1E0230D500A093FB /* YYSpriteSheetImage.m in Sources */,
 				735831641E0230D500A093FB /* YYTextLayout.m in Sources */,
@@ -1248,6 +1315,7 @@
 				735831731E0230D500A093FB /* YYTextUtilities.m in Sources */,
 				735831671E0230D500A093FB /* YYTextSelectionView.m in Sources */,
 				735831751E0230D500A093FB /* YYLabel.m in Sources */,
+				7371A0D81E1CE706006ACF31 /* FMDatabase.m in Sources */,
 				735831721E0230D500A093FB /* YYTextTransaction.m in Sources */,
 				735831691E0230D500A093FB /* YYTextAttribute.m in Sources */,
 				735831631E0230D500A093FB /* YYTextKeyboardManager.m in Sources */,
@@ -1257,6 +1325,8 @@
 				735831761E0230D500A093FB /* YYTextView.m in Sources */,
 				7358310A1E022F6300A093FB /* LiuqsDecoder.m in Sources */,
 				7358316E1E0230D500A093FB /* NSParagraphStyle+YYText.m in Sources */,
+				7371A0DC1E1CE706006ACF31 /* FMResultSet.m in Sources */,
+				73F38D9E1E1F31CB00ABD533 /* LiuqsFileManager.m in Sources */,
 				734D0F7E1E00E67400A898B0 /* LiuqsEmoticonKeyBoard.m in Sources */,
 				735831681E0230D500A093FB /* YYTextArchiver.m in Sources */,
 				735831601E0230D500A093FB /* YYTextDebugOption.m in Sources */,

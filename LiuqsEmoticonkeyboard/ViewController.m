@@ -30,7 +30,6 @@
 
     ChatViewController *chatVC = [[ChatViewController alloc]init];
     [self.navigationController pushViewController:chatVC animated:YES];
-  
 }
 
 

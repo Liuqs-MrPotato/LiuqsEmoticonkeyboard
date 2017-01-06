@@ -23,6 +23,6 @@ typedef enum : NSUInteger {
 
 @property(nonatomic, assign) userType userType;
 
-@property(nonatomic, strong) NSMutableAttributedString *attMessage;
+@property(nonatomic, assign) NSInteger userId;
 
 @end

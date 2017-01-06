@@ -26,7 +26,7 @@
     
     NSMutableAttributedString *attMessage = [LiuqsDecoder decodeWithPlainStr:message.messageContent font:[UIFont systemFontOfSize:17.0f]];
     
-    self.message.attMessage = attMessage;
+    self.attMessage = attMessage;
     
     CGFloat AllMargin = 31;
     
@@ -37,7 +37,7 @@
     container.size = maxsize;
     container.maximumNumberOfRows = 0;
     // 生成排版结果
-    YYTextLayout *layout = [YYTextLayout layoutWithContainer:container text:self.message.attMessage];
+    YYTextLayout *layout = [YYTextLayout layoutWithContainer:container text:self.attMessage];
     
     CGFloat airX = message.userType ? screenW - margin * 2 - headW - layout.textBoundingSize.width - AllMargin : margin * 2 + headW;
     

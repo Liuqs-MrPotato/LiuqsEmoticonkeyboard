@@ -32,7 +32,7 @@
 /*
  * 顶部输入条
  */
-@property(nonatomic, strong) LiuqsTopBarView *topicBar;
+@property(nonatomic, strong) LiuqsTopBarView *topBar;
 /* 
  * 输入框字体，用来计算表情的大小
  */

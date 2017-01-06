@@ -136,7 +136,7 @@ static UITableView *_tableview;
     UIImage *seleImage = [UIImage resizebleImageWithName:seleImageName];
     [self.airView setBackgroundImage:norImage forState:UIControlStateNormal];
     [self.airView setBackgroundImage:seleImage forState:UIControlStateHighlighted];
-    self.messageContentLabel.attributedText = MessageFrame.message.attMessage;
+    self.messageContentLabel.attributedText = MessageFrame.attMessage;
 }
 
 #pragma mark ==== 长按菜单事件 ====
@@ -149,7 +149,7 @@ static UITableView *_tableview;
         
         UIMenuItem *itemCopy = [[UIMenuItem alloc] initWithTitle:@"复制" action:@selector(copyText)];
         
-        UIMenuItem *itemCallBack = [[UIMenuItem alloc] initWithTitle:@"撤回" action:@selector(callBack)];
+        UIMenuItem *itemCallBack = [[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(delete)];
 
         UIMenuController *menuController = [UIMenuController sharedMenuController];
         
@@ -182,7 +182,7 @@ static UITableView *_tableview;
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
     
-    if (action == @selector(copyText) || action == @selector(callBack)){
+    if (action == @selector(copyText) || action == @selector(delete)){
         
         return YES;
     }
@@ -201,9 +201,13 @@ static UITableView *_tableview;
     pasteboard.string = self.MessageFrame.message.messageContent;
 }
 
-- (void)callBack {
+- (void)delete {
     
-    NSLog(@"撤回");
+    if (self.deleteMessage) {
+        self.deleteMessage(self.MessageFrame);
+    }
+    NSString *delestr = [NSString stringWithFormat:@"DELETE FROM %@ WHERE userId = '%zd'",tb_message,self.MessageFrame.message.userId];
+    [LiuqsMessageDataBase deleteData:delestr];
 }
 
 

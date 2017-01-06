@@ -15,4 +15,6 @@
 
 @property(nonatomic, strong) ChatMessageFrame *MessageFrame;
 
+@property(nonatomic, copy)void(^deleteMessage)(ChatMessageFrame *MessageFrame);
+
 @end

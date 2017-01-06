@@ -58,13 +58,23 @@
         ChatMessageFrame *cellFrame = [[ChatMessageFrame alloc]init];
         ChatMessage *message = [[ChatMessage alloc]init];
         message.userType = i % 2 ? userTypeMe : userTypeOther;
+        message.userId = i;
         NSString *Lmessage = @"在村里，Lz辈分比较大，在我还是小屁孩的时候就有大人喊我叔了，这不算糗[委屈]。 成年之后，鼓起勇气向村花二丫深情表白了(当然是没有血缘关系的)[害羞]，结果她一脸淡定的回绝了:“二叔！别闹……”[尴尬]";
         NSString *Mmessage = @"小学六年级书法课后不知是哪个用红纸写了张六畜兴旺贴教室门上，上课语文老师看看门走了过了一会才来过了几天去办公室交作业听见语文老师说：看见那几个字我本来是不想进去的，但是后来一想养猪的也得进去喂猪[奸笑]";
         message.messageContent = message.userType != userTypeMe ? Mmessage : Lmessage;
         cellFrame.message = message;
         [self.dataSource addObject:cellFrame];
     }
+    NSMutableArray *messageArray = [LiuqsMessageDataBase queryData:nil];
+    [messageArray enumerateObjectsUsingBlock:^(ChatMessage *message, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        ChatMessageFrame *cellFrame = [[ChatMessageFrame alloc]init];
+        cellFrame.message = message;
+        [self.dataSource addObject:cellFrame];
+    }];
     [self.chatList reloadData];
+    [self ScrollTableViewToBottom];
+    
 }
 
 - (void)addSubviews {
@@ -98,11 +108,17 @@
 //发送按钮的事件
 - (void)sendButtonEventsWithPlainString:(NSString *)PlainStr {
 
+    if (!PlainStr.length) {
+        return;
+    }
     //点击发送，发出一条消息
     ChatMessageFrame *cellFrame = [[ChatMessageFrame alloc]init];
     ChatMessage *message = [[ChatMessage alloc]init];
     message.messageContent = PlainStr;
     message.userType = userTypeOther;
+    message.userHeadImage = @"鸣人";
+    message.userName = @"鸣人";
+    message.userId = self.dataSource.count;
     cellFrame.message = message;
     [self.dataSource addObject:cellFrame];
     [self.chatList reloadData];
@@ -111,7 +127,13 @@
         [self ScrollTableViewToBottom];
     }];
     self.keyboard.textView.text = @"";
-    [self.keyboard.topicBar resetSubsives];
+    [self.keyboard.topBar resetSubsives];
+    
+    //保存到数据库
+    NSString *sql = [NSString stringWithFormat:@"insert or ignore into %@(userId,userName, userHeadImage, messageContent, userType) VALUES ('%zd','%@','%@', '%@', '%zd');" , tb_message, message.userId, message.userName, message.userHeadImage, message.messageContent, message.userType];
+    
+    [LiuqsMessageDataBase insertMessageWithSql:sql];
+    
 }
 
 - (void)keyBoardChanged {
@@ -129,11 +151,11 @@
     //判断是否需要滚动到底部，给一个误差值
     if (self.chatList.contentOffset.y > offSetY - 5 || self.chatList.contentOffset.y > offSetY + 5) {
         
-        self.chatList.Ex_height = self.keyboard.topicBar.Ex_y - 64;
+        self.chatList.Ex_height = self.keyboard.topBar.Ex_y - 64;
         [self ScrollTableViewToBottom];
     }else {
     
-        self.chatList.Ex_height = self.keyboard.topicBar.Ex_y - 64;
+        self.chatList.Ex_height = self.keyboard.topBar.Ex_y - 64;
     }
 }
 
@@ -161,7 +183,6 @@
         [self.chatList scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     }
 }
-#pragma - mrak - 长按菜单事件
 
 
 #pragma mark ==== tabbleView 代理方法
@@ -177,6 +198,14 @@
     cell.tag = indexPath.row;
     ChatMessageFrame *cellFrame = [self.dataSource objectAtIndex:indexPath.row];
     cell.MessageFrame = cellFrame;
+    
+    __weak typeof (self) weakSelf = self;
+    [cell setDeleteMessage:^(ChatMessageFrame *MessageFrame) {
+        NSUInteger index = [self.dataSource indexOfObject:MessageFrame];
+        [weakSelf.dataSource removeObject:MessageFrame];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        [weakSelf.chatList deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }];
     return cell;
 }
 

@@ -42,14 +42,14 @@
 #pragma mark ==== 懒加载 ====
 
 //带输入框的那一条
-- (LiuqsTopBarView *)topicBar {
+- (LiuqsTopBarView *)topBar {
 
-    if (!_topicBar) {
-        _topicBar = [[LiuqsTopBarView alloc]init];
-        _topicBar.delegate = self;
-        self.textView = _topicBar.textView;
+    if (!_topBar) {
+        _topBar = [[LiuqsTopBarView alloc]init];
+        _topBar.delegate = self;
+        self.textView = _topBar.textView;
     }
-    return _topicBar;
+    return _topBar;
 }
 
 - (UIPageControl *)pageControl {
@@ -126,7 +126,9 @@
     if (!view) {return nil;}
     LiuqsEmoticonKeyBoard *keyboard = [[LiuqsEmoticonKeyBoard alloc]init];
     [view addSubview:keyboard];
-    [view addSubview:keyboard.topicBar];
+    [view addSubview:keyboard.topBar
+     
+     ];
     return keyboard;
 }
 - (void)method {
@@ -140,14 +142,14 @@
 
 - (void)hideKeyBoard {
 
-    if (self.topicBar.textView.isFirstResponder) {
-        [self.topicBar.textView resignFirstResponder];
+    if (self.topBar.textView.isFirstResponder) {
+        [self.topBar.textView resignFirstResponder];
     }
     [UIView animateWithDuration:keyBoardTipTime animations:^{
-        self.topicBar.Ex_y = screenH - self.topicBar.Ex_height;
+        self.topBar.Ex_y = screenH - self.topBar.Ex_height;
         self.Ex_y = screenH;
-        self.topicBar.topBarEmotionBtn.selected = NO;
-        self.topicBar.CurrentKeyBoardH = keyBoardH;
+        self.topBar.topBarEmotionBtn.selected = NO;
+        self.topBar.CurrentKeyBoardH = keyBoardH;
         [self UpdateSuperView];
     }];
     self.onlyHideSysKboard = NO;
@@ -168,7 +170,7 @@
     NSValue *endValue      = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect beginFrame      = beginValue.CGRectValue;
     CGRect endFrame        = endValue.CGRectValue;
-    self.topicBar.CurrentKeyBoardH = endFrame.size.height;
+    self.topBar.CurrentKeyBoardH = endFrame.size.height;
     BOOL isNeedHandle = beginFrame.size.height > 0 && beginFrame.origin.y - endFrame.origin.y > 0;
     //处理键盘走多次
     if (isNeedHandle) {
@@ -179,7 +181,7 @@
 
 - (void)keyBoardWillHide:(NSNotification *)noti {
     
-    self.topicBar.CurrentKeyBoardH = keyBoardH;
+    self.topBar.CurrentKeyBoardH = keyBoardH;
     if (!self.onlyHideSysKboard) {
         [self hideKeyBoard];
     }
@@ -196,10 +198,10 @@
 //处理键盘弹出
 - (void)handleKeyBoardShow:(CGRect)frame {
     
-    self.topicBar.topBarEmotionBtn.selected = NO;
+    self.topBar.topBarEmotionBtn.selected = NO;
     [UIView animateWithDuration:keyBoardTipTime animations:^{
         
-        self.topicBar.Ex_y = screenH - frame.size.height - self.topicBar.Ex_height;
+        self.topBar.Ex_y = screenH - frame.size.height - self.topBar.Ex_height;
         self.Ex_y = screenH - keyBoardH;
         [self UpdateSuperView];
     }];
@@ -291,10 +293,11 @@
     [_textView.textStorage addAttribute:NSFontAttributeName value:self.font range:wholeRange];
     [self.textView scrollRectToVisible:CGRectMake(0, 0, _textView.contentSize.width, _textView.contentSize.height) animated:NO];
     //重新设置输入框视图的frame
-    [self.topicBar resetSubsives];
+    [self.topBar resetSubsives];
 }
 
 #pragma mark ==== topBar代理方法 ====
+
 ///代理方法，点击表情按钮触发方法
 - (void)TopBarEmotionBtnDidClicked:(UIButton *)emotionBtn {
 
@@ -315,10 +318,10 @@
     self.onlyHideSysKboard = NO;
     [UIView animateWithDuration:keyBoardTipTime animations:^{
        
-        self.topicBar.Ex_y = screenH - self.topicBar.Ex_height - self.topicBar.CurrentKeyBoardH;
+        self.topBar.Ex_y = screenH - self.topBar.Ex_height - self.topBar.CurrentKeyBoardH;
         self.Ex_y = screenH - self.Ex_height;
     }];
-    self.topicBar.topBarEmotionBtn.selected = YES;
+    self.topBar.topBarEmotionBtn.selected = YES;
     [self UpdateSuperView];
 }
 
@@ -331,10 +334,10 @@
     }
     [UIView animateWithDuration:keyBoardTipTime animations:^{
         
-        self.topicBar.Ex_y = screenH - self.topicBar.Ex_height - self.topicBar.CurrentKeyBoardH;
+        self.topBar.Ex_y = screenH - self.topBar.Ex_height - self.topBar.CurrentKeyBoardH;
         self.Ex_y = screenH - self.Ex_height;
     }];
-    self.topicBar.topBarEmotionBtn.selected = NO;
+    self.topBar.topBarEmotionBtn.selected = NO;
     [self UpdateSuperView];
 }
 

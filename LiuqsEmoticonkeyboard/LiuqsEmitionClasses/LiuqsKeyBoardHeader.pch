@@ -14,30 +14,52 @@
 #import "UIView+Extension.h"
 #import "NSAttributedString+LiuqsExtension.h"
 #import "YYText.h"
-#import "YYImage.h"
+#import "YYImage.h" 
 #import "LiuqsDecoder.h"
+#import "FMDB.h"
+#import "LiuqsMessageDataBase.h"
+#import "LiuqsFileManager.h"
 
+//屏幕宽
 #define screenW [UIScreen mainScreen].bounds.size.width
+//屏幕高
 #define screenH [UIScreen mainScreen].bounds.size.height
-///topbar
-#define topBarH   TextViewH - 10
-#define TextViewW screenW - (screenW * 55 / 320)
-#define TextViewH 36.5
-#define emotionBtnW 36.5
-#define emotionBtnH 36.5
-#define toolBarFrameDown CGRectMake(0, 0, screenW, topBarH)
-#define toolBarFrameUPBaseEmotion CGRectMake(0, screenH - toobarH - EMOJI_KEYBOARD_HEIGHT, screenW, toobarH)
 
-//keyBoard
-#define keyBoardTipTime 0.3
+/*topbar*/
+//输入框的高度
+static CGFloat const TextViewH = 36.5;
+//键盘切换按钮的宽度
+static CGFloat const emotionBtnW = 36.5;
+//键盘切换按钮的高度
+static CGFloat const emotionBtnH = 36.5;
+//顶部工具条的高度
+#define topBarH   TextViewH - 10
+//输入框的宽度
+#define TextViewW screenW - (screenW * 55 / 320)
+
+/*keyBoard*/
+//键盘变化时间
+static CGFloat const keyBoardTipTime = 0.3;
+//每一页的按钮数，包括删除按钮
+static CGFloat const emojiCount = 21;
+//每一行的按钮数
+static CGFloat const KrowCount = 7;
+//每一页的行数
+static CGFloat const rows = 3;
+//键盘高度
 #define keyBoardH (4 * screenW * 0.0875 +(3 + 1) * ((screenW - 7 * screenW * 0.0875 ) / 8) + 20)
-#define emojiCount 21
-#define KrowCount 7
+//表情按钮宽高
 #define emotionW screenW * 0.0875
-#define rows 3
+//表情页的高度（第一键盘高度）
 #define pageH (screenW - KrowCount * emotionW) / (KrowCount + 1)
 
-//颜色
+
+/*颜色*/
 #define ColorRGB(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
 
+/*表名*/
+//聊天消息表
+static NSString *const tb_message = @"_message";
+
 #endif /* LiuqsKeyBoardHeader_pch */
+

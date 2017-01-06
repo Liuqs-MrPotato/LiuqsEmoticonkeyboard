@@ -21,6 +21,8 @@
 
 @property(nonatomic, strong) ChatMessage *message;
 
+@property(nonatomic, strong) NSMutableAttributedString *attMessage;
+
 @property(nonatomic, assign) CGFloat cellHeight;
 
 @end
