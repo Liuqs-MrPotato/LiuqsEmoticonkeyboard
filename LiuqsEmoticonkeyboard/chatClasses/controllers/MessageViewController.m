@@ -6,19 +6,19 @@
 //  Copyright © 2016年 刘全水. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MessageViewController.h"
 #import "ChatViewController.h"
 
-@interface ViewController ()
+@interface MessageViewController ()
 
 
 @end
 
-@implementation ViewController
+@implementation MessageViewController
 
 - (void)viewDidLoad {
 
-    self.title = @"主页";
+    self.view.backgroundColor = [UIColor whiteColor];
     UILabel *label = [[UILabel alloc]initWithFrame:self.view.bounds];
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     label.textAlignment = NSTextAlignmentCenter;
@@ -29,6 +29,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 
     ChatViewController *chatVC = [[ChatViewController alloc]init];
+    chatVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chatVC animated:YES];
 }
 

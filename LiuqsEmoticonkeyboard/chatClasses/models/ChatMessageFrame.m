@@ -47,7 +47,7 @@
     
     self.messageLabelFrame = CGRectMake(contentX, 43, layout.textBoundingSize.width, layout.textBoundingSize.height);
     
-    self.cellHeight = CGRectGetMaxY(self.messageLabelFrame) + margin;
+    self.cellHeight = CGRectGetMaxY(self.messageLabelFrame) + margin * 2;
     
 }
 

@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		732090AA1DDA9A1E00C757FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 732090A91DDA9A1E00C757FF /* main.m */; };
 		732090AD1DDA9A1E00C757FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 732090AC1DDA9A1E00C757FF /* AppDelegate.m */; };
-		732090B01DDA9A1E00C757FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 732090AF1DDA9A1E00C757FF /* ViewController.m */; };
-		732090B31DDA9A1E00C757FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732090B11DDA9A1E00C757FF /* Main.storyboard */; };
 		732090B51DDA9A1E00C757FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 732090B41DDA9A1E00C757FF /* Assets.xcassets */; };
 		732090B81DDA9A1E00C757FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 732090B61DDA9A1E00C757FF /* LaunchScreen.storyboard */; };
 		732090C31DDA9A1E00C757FF /* LiuqsEmoticonkeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 732090C21DDA9A1E00C757FF /* LiuqsEmoticonkeyboardTests.m */; };
 		732090CE1DDA9A1E00C757FF /* LiuqsEmoticonkeyboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 732090CD1DDA9A1E00C757FF /* LiuqsEmoticonkeyboardUITests.m */; };
+		733EAA821E25CA7D00EA6AE7 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EAA811E25CA7D00EA6AE7 /* MessageViewController.m */; };
+		733EAA851E25CAAA00EA6AE7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EAA841E25CAAA00EA6AE7 /* FriendsViewController.m */; };
+		733EAA871E25CAD300EA6AE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EAA861E25CAD300EA6AE7 /* main.m */; };
+		733EAA8A1E25CB1500EA6AE7 /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EAA891E25CB1500EA6AE7 /* TabbarViewController.m */; };
 		734D0F7D1E00E67400A898B0 /* LiuqsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F711E00E67400A898B0 /* LiuqsButton.m */; };
 		734D0F7E1E00E67400A898B0 /* LiuqsEmoticonKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F731E00E67400A898B0 /* LiuqsEmoticonKeyBoard.m */; };
 		734D0F7F1E00E67400A898B0 /* LiuqsEmotionPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F751E00E67400A898B0 /* LiuqsEmotionPageView.m */; };
@@ -239,12 +240,8 @@
 
 /* Begin PBXFileReference section */
 		732090A51DDA9A1E00C757FF /* LiuqsEmoticonkeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiuqsEmoticonkeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		732090A91DDA9A1E00C757FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		732090AB1DDA9A1E00C757FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		732090AC1DDA9A1E00C757FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		732090AE1DDA9A1E00C757FF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		732090AF1DDA9A1E00C757FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		732090B21DDA9A1E00C757FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		732090B41DDA9A1E00C757FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		732090B71DDA9A1E00C757FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		732090B91DDA9A1E00C757FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,6 +251,13 @@
 		732090C91DDA9A1E00C757FF /* LiuqsEmoticonkeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiuqsEmoticonkeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		732090CD1DDA9A1E00C757FF /* LiuqsEmoticonkeyboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiuqsEmoticonkeyboardUITests.m; sourceTree = "<group>"; };
 		732090CF1DDA9A1E00C757FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		733EAA801E25CA7D00EA6AE7 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		733EAA811E25CA7D00EA6AE7 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		733EAA831E25CAAA00EA6AE7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		733EAA841E25CAAA00EA6AE7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		733EAA861E25CAD300EA6AE7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		733EAA881E25CB1500EA6AE7 /* TabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarViewController.h; sourceTree = "<group>"; };
+		733EAA891E25CB1500EA6AE7 /* TabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController.m; sourceTree = "<group>"; };
 		734D0F701E00E67400A898B0 /* LiuqsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsButton.h; sourceTree = "<group>"; };
 		734D0F711E00E67400A898B0 /* LiuqsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuqsButton.m; sourceTree = "<group>"; };
 		734D0F721E00E67400A898B0 /* LiuqsEmoticonKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsEmoticonKeyBoard.h; sourceTree = "<group>"; };
@@ -570,15 +574,12 @@
 		732090A71DDA9A1E00C757FF /* LiuqsEmoticonkeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				7371A0CB1E1CE6DB006ACF31 /* dataBaseClass */,
 				735831191E0230D500A093FB /* YYTextClasses */,
 				734D0F6F1E00E67400A898B0 /* LiuqsEmitionClasses */,
 				734D0F6E1E00E63300A898B0 /* chatClasses */,
-				7371A0CB1E1CE6DB006ACF31 /* dataBaseClass */,
 				732090AB1DDA9A1E00C757FF /* AppDelegate.h */,
 				732090AC1DDA9A1E00C757FF /* AppDelegate.m */,
-				732090AE1DDA9A1E00C757FF /* ViewController.h */,
-				732090AF1DDA9A1E00C757FF /* ViewController.m */,
-				732090B11DDA9A1E00C757FF /* Main.storyboard */,
 				732090B41DDA9A1E00C757FF /* Assets.xcassets */,
 				732090B61DDA9A1E00C757FF /* LaunchScreen.storyboard */,
 				732090B91DDA9A1E00C757FF /* Info.plist */,
@@ -590,7 +591,7 @@
 		732090A81DDA9A1E00C757FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				732090A91DDA9A1E00C757FF /* main.m */,
+				733EAA861E25CAD300EA6AE7 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -650,8 +651,14 @@
 		735830F91E02260100A093FB /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				733EAA881E25CB1500EA6AE7 /* TabbarViewController.h */,
+				733EAA891E25CB1500EA6AE7 /* TabbarViewController.m */,
+				733EAA801E25CA7D00EA6AE7 /* MessageViewController.h */,
+				733EAA811E25CA7D00EA6AE7 /* MessageViewController.m */,
 				735830FA1E02260100A093FB /* ChatViewController.h */,
 				735830FB1E02260100A093FB /* ChatViewController.m */,
+				733EAA831E25CAAA00EA6AE7 /* FriendsViewController.h */,
+				733EAA841E25CAAA00EA6AE7 /* FriendsViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -1247,7 +1254,6 @@
 				73D40A2A1DFE7FFA0085803E /* 42.gif in Resources */,
 				73D40A141DFE7FFA0085803E /* 32.gif in Resources */,
 				73D40A361DFE7FFA0085803E /* 48.gif in Resources */,
-				732090B31DDA9A1E00C757FF /* Main.storyboard in Resources */,
 				73D409ED1DFE7FFA0085803E /* 14.png in Resources */,
 				73D40A631DFE7FFA0085803E /* 68.png in Resources */,
 				73D40A591DFE7FFA0085803E /* 63.png in Resources */,
@@ -1282,6 +1288,8 @@
 			files = (
 				735831181E022FD400A093FB /* UIView+Extension.m in Sources */,
 				7358316A1E0230D500A093FB /* YYTextParser.m in Sources */,
+				733EAA8A1E25CB1500EA6AE7 /* TabbarViewController.m in Sources */,
+				733EAA821E25CA7D00EA6AE7 /* MessageViewController.m in Sources */,
 				7371A0D91E1CE706006ACF31 /* FMDatabaseAdditions.m in Sources */,
 				7371A0DB1E1CE706006ACF31 /* FMDatabaseQueue.m in Sources */,
 				735831171E022FD400A093FB /* UIImage+extension.m in Sources */,
@@ -1290,7 +1298,6 @@
 				7358315A1E0230D500A093FB /* YYAnimatedImageView.m in Sources */,
 				735831011E0226BF00A093FB /* ChatMessageCell.m in Sources */,
 				7358316F1E0230D500A093FB /* UIPasteboard+YYText.m in Sources */,
-				732090B01DDA9A1E00C757FF /* ViewController.m in Sources */,
 				735831741E0230D500A093FB /* YYTextWeakProxy.m in Sources */,
 				734D0F8C1E00FA6400A898B0 /* LiuqsTextAttachment.m in Sources */,
 				732090AD1DDA9A1E00C757FF /* AppDelegate.m in Sources */,
@@ -1301,7 +1308,6 @@
 				734D0F7D1E00E67400A898B0 /* LiuqsButton.m in Sources */,
 				735831711E0230D500A093FB /* YYTextAsyncLayer.m in Sources */,
 				7358316C1E0230D500A093FB /* YYTextRunDelegate.m in Sources */,
-				732090AA1DDA9A1E00C757FF /* main.m in Sources */,
 				735831651E0230D500A093FB /* YYTextLine.m in Sources */,
 				734D0F891E00F9F500A898B0 /* NSAttributedString+LiuqsExtension.m in Sources */,
 				735831701E0230D500A093FB /* UIView+YYText.m in Sources */,
@@ -1318,6 +1324,7 @@
 				7371A0D81E1CE706006ACF31 /* FMDatabase.m in Sources */,
 				735831721E0230D500A093FB /* YYTextTransaction.m in Sources */,
 				735831691E0230D500A093FB /* YYTextAttribute.m in Sources */,
+				733EAA871E25CAD300EA6AE7 /* main.m in Sources */,
 				735831631E0230D500A093FB /* YYTextKeyboardManager.m in Sources */,
 				7358315B1E0230D500A093FB /* YYFrameImage.m in Sources */,
 				7358316D1E0230D500A093FB /* NSAttributedString+YYText.m in Sources */,
@@ -1329,6 +1336,7 @@
 				73F38D9E1E1F31CB00ABD533 /* LiuqsFileManager.m in Sources */,
 				734D0F7E1E00E67400A898B0 /* LiuqsEmoticonKeyBoard.m in Sources */,
 				735831681E0230D500A093FB /* YYTextArchiver.m in Sources */,
+				733EAA851E25CAAA00EA6AE7 /* FriendsViewController.m in Sources */,
 				735831601E0230D500A093FB /* YYTextDebugOption.m in Sources */,
 				7358315D1E0230D500A093FB /* YYImageCoder.m in Sources */,
 				7358316B1E0230D500A093FB /* YYTextRubyAnnotation.m in Sources */,
@@ -1367,14 +1375,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		732090B11DDA9A1E00C757FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				732090B21DDA9A1E00C757FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		732090B61DDA9A1E00C757FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
