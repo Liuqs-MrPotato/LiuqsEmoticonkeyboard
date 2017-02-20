@@ -44,12 +44,12 @@ static NSString *const checkStr = @"\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\\]";
     // 读取并加载对照表
     NSString *path = [[NSBundle mainBundle] pathForResource:@"LiuqsEmotions" ofType:@"plist"];
     _emojiImages = [NSDictionary dictionaryWithContentsOfFile:path];
-    //设置文本参数
+    //文本间隔
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
-    
     [paragraphStyle setLineSpacing:4.0f];
     
-    NSDictionary *dict = @{NSFontAttributeName:_font,NSParagraphStyleAttributeName:paragraphStyle};
+    NSDictionary *dict = @{NSFontAttributeName:          _font,
+                           NSParagraphStyleAttributeName:paragraphStyle};
     
     CGSize maxsize = CGSizeMake(1000, MAXFLOAT);
     

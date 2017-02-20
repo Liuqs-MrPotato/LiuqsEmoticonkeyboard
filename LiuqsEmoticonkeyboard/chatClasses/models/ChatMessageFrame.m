@@ -39,13 +39,16 @@
     // 生成排版结果
     YYTextLayout *layout = [YYTextLayout layoutWithContainer:container text:self.attMessage];
     
-    CGFloat airX = message.userType ? screenW - margin * 2 - headW - layout.textBoundingSize.width - AllMargin : margin * 2 + headW;
+    CGFloat textW = layout.textBoundingSize.width > maxsize.width ? maxsize.width : layout.textBoundingSize.width;
     
-    self.airViewFrame = CGRectMake(airX, 35, layout.textBoundingSize.width + 31, layout.textBoundingSize.height + 16);
     
-    CGFloat contentX = message.userType ? screenW - margin * 2 - headW - layout.textBoundingSize.width - 18 : margin * 2 + headW + 20;
+    CGFloat airX = message.userType ? screenW - margin * 2 - headW - textW - AllMargin : margin * 2 + headW;
     
-    self.messageLabelFrame = CGRectMake(contentX, 43, layout.textBoundingSize.width, layout.textBoundingSize.height);
+    self.airViewFrame = CGRectMake(airX, 35, textW + 31, layout.textBoundingSize.height + 16);
+    
+    CGFloat contentX = message.userType ? screenW - margin * 2 - headW - textW - 18 : margin * 2 + headW + 20;
+    
+    self.messageLabelFrame = CGRectMake(contentX, 43, textW, layout.textBoundingSize.height);
     
     self.cellHeight = CGRectGetMaxY(self.messageLabelFrame) + margin * 2;
     

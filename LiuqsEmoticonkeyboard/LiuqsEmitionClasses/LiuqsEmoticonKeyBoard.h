@@ -49,7 +49,7 @@
  * 初始化方法
  * 参数view必须传入控制器的视图
  * 会返回一个键盘的对象
- * 默认是给17号字体
+ * 默认是给17号字体 
  */
 + (instancetype)showKeyBoardInView:(UIView *)view;
 

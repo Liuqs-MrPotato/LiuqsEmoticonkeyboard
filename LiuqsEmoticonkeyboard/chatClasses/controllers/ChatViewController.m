@@ -61,10 +61,8 @@
     message.messageContent = Lmessage;
     cellFrame.message = message;
     [self.dataSource addObject:cellFrame];
-    
     NSMutableArray *messageArray = [LiuqsMessageDataBase queryData:nil];
     [messageArray enumerateObjectsUsingBlock:^(ChatMessage *message, NSUInteger idx, BOOL * _Nonnull stop) {
-        
         ChatMessageFrame *cellFrame = [[ChatMessageFrame alloc]init];
         cellFrame.message = message;
         [self.dataSource addObject:cellFrame];

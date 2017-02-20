@@ -206,8 +206,8 @@ static UITableView *_tableview;
     if (self.deleteMessage) {
         self.deleteMessage(self.MessageFrame);
     }
-    NSString *delestr = [NSString stringWithFormat:@"DELETE FROM %@ WHERE userId = '%zd'",tb_message,self.MessageFrame.message.userId];
-    [LiuqsMessageDataBase deleteData:delestr];
+    NSString *deletestr = [NSString stringWithFormat:@"DELETE FROM %@ WHERE userId = '%zd'",tb_message,self.MessageFrame.message.userId];
+    [LiuqsMessageDataBase deleteData:deletestr];
 }
 
 

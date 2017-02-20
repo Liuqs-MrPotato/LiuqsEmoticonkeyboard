@@ -115,7 +115,7 @@
 //构造方法
 - (instancetype)init {
 
-    if (self = [super init]){[self method];}
+    if (self = [super init]){[self methods];}
     return self;
 }
 
@@ -131,7 +131,7 @@
      ];
     return keyboard;
 }
-- (void)method {
+- (void)methods {
     
     [self initSomeThing];
     [self configureSubViews];

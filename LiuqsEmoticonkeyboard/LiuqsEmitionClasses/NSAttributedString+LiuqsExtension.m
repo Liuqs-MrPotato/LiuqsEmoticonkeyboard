@@ -11,6 +11,7 @@
 
 @implementation NSAttributedString (LiuqsExtension)
 
+//遍历替换图片得到普通字符
 - (NSString *)getPlainString {
     
     NSMutableString *plainString = [NSMutableString stringWithString:self.string];
