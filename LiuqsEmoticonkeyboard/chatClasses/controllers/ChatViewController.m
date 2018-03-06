@@ -7,7 +7,8 @@
 //
 
 #import "ChatViewController.h"
-#import "ChatMessageCell.h"
+#import "ChatMessageCellOther.h"
+#import "ChatMessageCellMe.h"
 #import "ChatMessage.h"
 
 @interface ChatViewController ()<LiuqsEmotionKeyBoardDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -34,6 +35,8 @@
         _chatList.tableFooterView = [[UIView alloc]init];
         _chatList.delegate = self;
         _chatList.dataSource = self;
+        _chatList.rowHeight = UITableViewAutomaticDimension;
+        _chatList.estimatedRowHeight = 130;
         _chatList.separatorStyle = UITableViewCellSeparatorStyleNone;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(listTap)];
         [_chatList addGestureRecognizer:tap];
@@ -52,20 +55,15 @@
 
 
 - (void)initData {
-
-    ChatMessageFrame *cellFrame = [[ChatMessageFrame alloc]init];
     ChatMessage *message = [[ChatMessage alloc]init];
-    message.userType = userTypeMe;
+    message.userType = userTypeOther;
     message.userId = 0;
     NSString *Lmessage = @"在村里，Lz辈分比较大，在我还是小屁孩的时候就有大人喊我叔了，这不算糗[委屈]。 成年之后，鼓起勇气向村花二丫深情表白了(当然是没有血缘关系的)[害羞]，结果她一脸淡定的回绝了:“二叔！别闹……”[尴尬]";
     message.messageContent = Lmessage;
-    cellFrame.message = message;
-    [self.dataSource addObject:cellFrame];
+    [self.dataSource addObject:message];
     NSMutableArray *messageArray = [LiuqsMessageDataBase queryData:nil];
     [messageArray enumerateObjectsUsingBlock:^(ChatMessage *message, NSUInteger idx, BOOL * _Nonnull stop) {
-        ChatMessageFrame *cellFrame = [[ChatMessageFrame alloc]init];
-        cellFrame.message = message;
-        [self.dataSource addObject:cellFrame];
+        [self.dataSource addObject:message];
     }];
     [self.chatList reloadData];
     [self ScrollTableViewToBottom];
@@ -106,15 +104,12 @@
         return;
     }
     //点击发送，发出一条消息
-    ChatMessageFrame *cellFrame = [[ChatMessageFrame alloc]init];
     ChatMessage *message = [[ChatMessage alloc]init];
+    message.userType = userTypeMe;
     message.messageContent = PlainStr;
-    message.userType = userTypeOther;
     message.userHeadImage = @"鸣人";
-    message.userName = @"鸣人";
     message.userId = self.dataSource.count;
-    cellFrame.message = message;
-    [self.dataSource addObject:cellFrame];
+    [self.dataSource addObject:message];
     [self.chatList reloadData];
     [UIView animateWithDuration:0.25 animations:^{
        
@@ -190,25 +185,31 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    ChatMessageCell *cell = [ChatMessageCell cellWithTableView:tableView];
-    cell.tag = indexPath.row;
-    ChatMessageFrame *cellFrame = [self.dataSource objectAtIndex:indexPath.row];
-    cell.MessageFrame = cellFrame;
-    
-    __weak typeof (self) weakSelf = self;
-    [cell setDeleteMessage:^(ChatMessageFrame *MessageFrame) {
-        NSUInteger index = [self.dataSource indexOfObject:MessageFrame];
-        [weakSelf.dataSource removeObject:MessageFrame];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-        [weakSelf.chatList deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    }];
-    return cell;
+    ChatMessage *message = [self.dataSource objectAtIndex:indexPath.row];
+    if (message.userType == userTypeMe) {
+        ChatMessageCellMe *cell = [ChatMessageCellMe cellWithTableView:tableView];
+        cell.message = message;
+        __weak typeof (self) weakSelf = self;
+        [cell setDeleteMessage:^(ChatMessage *message) {
+            [weakSelf deleteCellWithMessage:message];
+        }];
+        return cell;
+    }else {
+        ChatMessageCellOther *cell = [ChatMessageCellOther cellWithTableView:tableView];
+        cell.message = message;
+        __weak typeof (self) weakSelf = self;
+        [cell setDeleteMessage:^(ChatMessage *message) {
+            [weakSelf deleteCellWithMessage:message];
+        }];
+        return cell;
+    }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    ChatMessageFrame *cellFrame = [self.dataSource objectAtIndex:indexPath.row];
-    return cellFrame.cellHeight;
+- (void)deleteCellWithMessage:(ChatMessage *)message {
+    NSUInteger index = [self.dataSource indexOfObject:message];
+    [self.dataSource removeObject:message];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    [self.chatList deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 

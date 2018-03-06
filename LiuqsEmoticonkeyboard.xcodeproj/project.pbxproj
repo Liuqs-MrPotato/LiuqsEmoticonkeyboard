@@ -24,9 +24,8 @@
 		734D0F8C1E00FA6400A898B0 /* LiuqsTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D0F8B1E00FA6400A898B0 /* LiuqsTextAttachment.m */; };
 		735369591E1DE4C400F6F351 /* LiuqsMessageDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 735369581E1DE4C400F6F351 /* LiuqsMessageDataBase.m */; };
 		735830FC1E02260100A093FB /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735830FB1E02260100A093FB /* ChatViewController.m */; };
-		735831011E0226BF00A093FB /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831001E0226BF00A093FB /* ChatMessageCell.m */; };
+		735831011E0226BF00A093FB /* ChatMessageCellOther.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831001E0226BF00A093FB /* ChatMessageCellOther.m */; };
 		735831041E0229B700A093FB /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831031E0229B700A093FB /* ChatMessage.m */; };
-		735831071E0229C500A093FB /* ChatMessageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831061E0229C500A093FB /* ChatMessageFrame.m */; };
 		7358310A1E022F6300A093FB /* LiuqsDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831091E022F6300A093FB /* LiuqsDecoder.m */; };
 		735831171E022FD400A093FB /* UIImage+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831141E022FD400A093FB /* UIImage+extension.m */; };
 		735831181E022FD400A093FB /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 735831161E022FD400A093FB /* UIView+Extension.m */; };
@@ -74,6 +73,18 @@
 		7371A0DA1E1CE706006ACF31 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371A0D21E1CE706006ACF31 /* FMDatabasePool.m */; };
 		7371A0DB1E1CE706006ACF31 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371A0D41E1CE706006ACF31 /* FMDatabaseQueue.m */; };
 		7371A0DC1E1CE706006ACF31 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7371A0D71E1CE706006ACF31 /* FMResultSet.m */; };
+		73A5B066204E67130069C53B /* ChatMessageCellMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B065204E67130069C53B /* ChatMessageCellMe.m */; };
+		73A5B082204E697B0069C53B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B069204E697B0069C53B /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		73A5B083204E697B0069C53B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B072204E697B0069C53B /* ViewController+MASAdditions.m */; };
+		73A5B084204E697B0069C53B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B076204E697B0069C53B /* MASCompositeConstraint.m */; };
+		73A5B085204E697B0069C53B /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B077204E697B0069C53B /* MASConstraintMaker.m */; };
+		73A5B086204E697B0069C53B /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B078204E697B0069C53B /* MASLayoutConstraint.m */; };
+		73A5B087204E697B0069C53B /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B079204E697B0069C53B /* NSArray+MASAdditions.m */; };
+		73A5B088204E697B0069C53B /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B07A204E697B0069C53B /* View+MASAdditions.m */; };
+		73A5B089204E697B0069C53B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B07D204E697B0069C53B /* MASConstraint.m */; };
+		73A5B08A204E697B0069C53B /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B07F204E697B0069C53B /* MASViewConstraint.m */; };
+		73A5B08B204E697B0069C53B /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A5B080204E697B0069C53B /* MASViewAttribute.m */; };
+		73A5B08C204E697B0069C53B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73A5B081204E697B0069C53B /* Info.plist */; };
 		73D408AC1DFE50A20085803E /* LiuqsEmotions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73D4081A1DFE50A20085803E /* LiuqsEmotions.plist */; };
 		73D409E21DFE7FFA0085803E /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73D409521DFE7FF90085803E /* 1.gif */; };
 		73D409E31DFE7FFA0085803E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D409531DFE7FF90085803E /* 1.png */; };
@@ -276,12 +287,10 @@
 		735369581E1DE4C400F6F351 /* LiuqsMessageDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuqsMessageDataBase.m; sourceTree = "<group>"; };
 		735830FA1E02260100A093FB /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		735830FB1E02260100A093FB /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		735830FF1E0226BF00A093FB /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
-		735831001E0226BF00A093FB /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
+		735830FF1E0226BF00A093FB /* ChatMessageCellOther.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCellOther.h; sourceTree = "<group>"; };
+		735831001E0226BF00A093FB /* ChatMessageCellOther.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCellOther.m; sourceTree = "<group>"; };
 		735831021E0229B700A093FB /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
 		735831031E0229B700A093FB /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
-		735831051E0229C500A093FB /* ChatMessageFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageFrame.h; sourceTree = "<group>"; };
-		735831061E0229C500A093FB /* ChatMessageFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageFrame.m; sourceTree = "<group>"; };
 		735831081E022F6300A093FB /* LiuqsDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuqsDecoder.h; sourceTree = "<group>"; };
 		735831091E022F6300A093FB /* LiuqsDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuqsDecoder.m; sourceTree = "<group>"; };
 		735831131E022FD400A093FB /* UIImage+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+extension.h"; sourceTree = "<group>"; };
@@ -369,6 +378,34 @@
 		7371A0D51E1CE706006ACF31 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		7371A0D61E1CE706006ACF31 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		7371A0D71E1CE706006ACF31 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		73A5B064204E67130069C53B /* ChatMessageCellMe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMessageCellMe.h; sourceTree = "<group>"; };
+		73A5B065204E67130069C53B /* ChatMessageCellMe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCellMe.m; sourceTree = "<group>"; };
+		73A5B068204E697B0069C53B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		73A5B069204E697B0069C53B /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		73A5B06A204E697B0069C53B /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		73A5B06B204E697B0069C53B /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		73A5B06C204E697B0069C53B /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		73A5B06D204E697B0069C53B /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		73A5B06E204E697B0069C53B /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		73A5B06F204E697B0069C53B /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		73A5B070204E697B0069C53B /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		73A5B071204E697B0069C53B /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		73A5B072204E697B0069C53B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		73A5B073204E697B0069C53B /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		73A5B074204E697B0069C53B /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		73A5B075204E697B0069C53B /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		73A5B076204E697B0069C53B /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		73A5B077204E697B0069C53B /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		73A5B078204E697B0069C53B /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		73A5B079204E697B0069C53B /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		73A5B07A204E697B0069C53B /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		73A5B07B204E697B0069C53B /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		73A5B07C204E697B0069C53B /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		73A5B07D204E697B0069C53B /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		73A5B07E204E697B0069C53B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		73A5B07F204E697B0069C53B /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		73A5B080204E697B0069C53B /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		73A5B081204E697B0069C53B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73D4081A1DFE50A20085803E /* LiuqsEmotions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LiuqsEmotions.plist; sourceTree = "<group>"; };
 		73D409521DFE7FF90085803E /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
 		73D409531DFE7FF90085803E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -576,6 +613,7 @@
 		732090A71DDA9A1E00C757FF /* LiuqsEmoticonkeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				73A5B067204E697B0069C53B /* Masonry */,
 				7371A0CB1E1CE6DB006ACF31 /* dataBaseClass */,
 				735831191E0230D500A093FB /* YYTextClasses */,
 				734D0F6F1E00E67400A898B0 /* LiuqsEmitionClasses */,
@@ -671,8 +709,6 @@
 			children = (
 				735831021E0229B700A093FB /* ChatMessage.h */,
 				735831031E0229B700A093FB /* ChatMessage.m */,
-				735831051E0229C500A093FB /* ChatMessageFrame.h */,
-				735831061E0229C500A093FB /* ChatMessageFrame.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -680,8 +716,10 @@
 		735830FE1E02261200A093FB /* views */ = {
 			isa = PBXGroup;
 			children = (
-				735830FF1E0226BF00A093FB /* ChatMessageCell.h */,
-				735831001E0226BF00A093FB /* ChatMessageCell.m */,
+				735830FF1E0226BF00A093FB /* ChatMessageCellOther.h */,
+				735831001E0226BF00A093FB /* ChatMessageCellOther.m */,
+				73A5B064204E67130069C53B /* ChatMessageCellMe.h */,
+				73A5B065204E67130069C53B /* ChatMessageCellMe.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -848,6 +886,39 @@
 				7371A0D71E1CE706006ACF31 /* FMResultSet.m */,
 			);
 			path = fmdb;
+			sourceTree = "<group>";
+		};
+		73A5B067204E697B0069C53B /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				73A5B068204E697B0069C53B /* MASCompositeConstraint.h */,
+				73A5B069204E697B0069C53B /* NSLayoutConstraint+MASDebugAdditions.m */,
+				73A5B06A204E697B0069C53B /* MASConstraint+Private.h */,
+				73A5B06B204E697B0069C53B /* MASLayoutConstraint.h */,
+				73A5B06C204E697B0069C53B /* NSArray+MASShorthandAdditions.h */,
+				73A5B06D204E697B0069C53B /* MASConstraintMaker.h */,
+				73A5B06E204E697B0069C53B /* View+MASAdditions.h */,
+				73A5B06F204E697B0069C53B /* NSArray+MASAdditions.h */,
+				73A5B070204E697B0069C53B /* MASUtilities.h */,
+				73A5B071204E697B0069C53B /* MASViewAttribute.h */,
+				73A5B072204E697B0069C53B /* ViewController+MASAdditions.m */,
+				73A5B073204E697B0069C53B /* MASViewConstraint.h */,
+				73A5B074204E697B0069C53B /* MASConstraint.h */,
+				73A5B075204E697B0069C53B /* NSLayoutConstraint+MASDebugAdditions.h */,
+				73A5B076204E697B0069C53B /* MASCompositeConstraint.m */,
+				73A5B077204E697B0069C53B /* MASConstraintMaker.m */,
+				73A5B078204E697B0069C53B /* MASLayoutConstraint.m */,
+				73A5B079204E697B0069C53B /* NSArray+MASAdditions.m */,
+				73A5B07A204E697B0069C53B /* View+MASAdditions.m */,
+				73A5B07B204E697B0069C53B /* View+MASShorthandAdditions.h */,
+				73A5B07C204E697B0069C53B /* Masonry.h */,
+				73A5B07D204E697B0069C53B /* MASConstraint.m */,
+				73A5B07E204E697B0069C53B /* ViewController+MASAdditions.h */,
+				73A5B07F204E697B0069C53B /* MASViewConstraint.m */,
+				73A5B080204E697B0069C53B /* MASViewAttribute.m */,
+				73A5B081204E697B0069C53B /* Info.plist */,
+			);
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 		73D408191DFE50A20085803E /* Assets */ = {
@@ -1265,6 +1336,7 @@
 				73D40A2E1DFE7FFA0085803E /* 44.gif in Resources */,
 				73D409EB1DFE7FFA0085803E /* 13.png in Resources */,
 				73D40A391DFE7FFA0085803E /* 49.png in Resources */,
+				73A5B08C204E697B0069C53B /* Info.plist in Resources */,
 				73D409FF1DFE7FFA0085803E /* 22.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1292,6 +1364,7 @@
 			files = (
 				735831181E022FD400A093FB /* UIView+Extension.m in Sources */,
 				7358316A1E0230D500A093FB /* YYTextParser.m in Sources */,
+				73A5B088204E697B0069C53B /* View+MASAdditions.m in Sources */,
 				733EAA8A1E25CB1500EA6AE7 /* TabbarViewController.m in Sources */,
 				733EAA821E25CA7D00EA6AE7 /* MessageViewController.m in Sources */,
 				7371A0D91E1CE706006ACF31 /* FMDatabaseAdditions.m in Sources */,
@@ -1300,24 +1373,29 @@
 				735830FC1E02260100A093FB /* ChatViewController.m in Sources */,
 				734D0F7F1E00E67400A898B0 /* LiuqsEmotionPageView.m in Sources */,
 				7358315A1E0230D500A093FB /* YYAnimatedImageView.m in Sources */,
-				735831011E0226BF00A093FB /* ChatMessageCell.m in Sources */,
+				735831011E0226BF00A093FB /* ChatMessageCellOther.m in Sources */,
 				7358316F1E0230D500A093FB /* UIPasteboard+YYText.m in Sources */,
 				735831741E0230D500A093FB /* YYTextWeakProxy.m in Sources */,
+				73A5B085204E697B0069C53B /* MASConstraintMaker.m in Sources */,
+				73A5B08A204E697B0069C53B /* MASViewConstraint.m in Sources */,
 				734D0F8C1E00FA6400A898B0 /* LiuqsTextAttachment.m in Sources */,
 				732090AD1DDA9A1E00C757FF /* AppDelegate.m in Sources */,
 				7371A0DA1E1CE706006ACF31 /* FMDatabasePool.m in Sources */,
 				734D0F801E00E67400A898B0 /* LiuqsTopBarView.m in Sources */,
-				735831071E0229C500A093FB /* ChatMessageFrame.m in Sources */,
+				73A5B087204E697B0069C53B /* NSArray+MASAdditions.m in Sources */,
 				735831611E0230D500A093FB /* YYTextEffectWindow.m in Sources */,
 				734D0F7D1E00E67400A898B0 /* LiuqsButton.m in Sources */,
 				735831711E0230D500A093FB /* YYTextAsyncLayer.m in Sources */,
+				73A5B08B204E697B0069C53B /* MASViewAttribute.m in Sources */,
 				7358316C1E0230D500A093FB /* YYTextRunDelegate.m in Sources */,
 				735831651E0230D500A093FB /* YYTextLine.m in Sources */,
+				73A5B082204E697B0069C53B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				734D0F891E00F9F500A898B0 /* NSAttributedString+LiuqsExtension.m in Sources */,
 				735831701E0230D500A093FB /* UIView+YYText.m in Sources */,
 				735831661E0230D500A093FB /* YYTextMagnifier.m in Sources */,
 				735831041E0229B700A093FB /* ChatMessage.m in Sources */,
 				735369591E1DE4C400F6F351 /* LiuqsMessageDataBase.m in Sources */,
+				73A5B083204E697B0069C53B /* ViewController+MASAdditions.m in Sources */,
 				7358315F1E0230D500A093FB /* YYTextContainerView.m in Sources */,
 				7358315E1E0230D500A093FB /* YYSpriteSheetImage.m in Sources */,
 				735831641E0230D500A093FB /* YYTextLayout.m in Sources */,
@@ -1326,10 +1404,13 @@
 				735831671E0230D500A093FB /* YYTextSelectionView.m in Sources */,
 				735831751E0230D500A093FB /* YYLabel.m in Sources */,
 				7371A0D81E1CE706006ACF31 /* FMDatabase.m in Sources */,
+				73A5B084204E697B0069C53B /* MASCompositeConstraint.m in Sources */,
 				735831721E0230D500A093FB /* YYTextTransaction.m in Sources */,
 				735831691E0230D500A093FB /* YYTextAttribute.m in Sources */,
 				733EAA871E25CAD300EA6AE7 /* main.m in Sources */,
 				735831631E0230D500A093FB /* YYTextKeyboardManager.m in Sources */,
+				73A5B066204E67130069C53B /* ChatMessageCellMe.m in Sources */,
+				73A5B089204E697B0069C53B /* MASConstraint.m in Sources */,
 				7358315B1E0230D500A093FB /* YYFrameImage.m in Sources */,
 				7358316D1E0230D500A093FB /* NSAttributedString+YYText.m in Sources */,
 				735831621E0230D500A093FB /* YYTextInput.m in Sources */,
@@ -1337,6 +1418,7 @@
 				7358310A1E022F6300A093FB /* LiuqsDecoder.m in Sources */,
 				7358316E1E0230D500A093FB /* NSParagraphStyle+YYText.m in Sources */,
 				7371A0DC1E1CE706006ACF31 /* FMResultSet.m in Sources */,
+				73A5B086204E697B0069C53B /* MASLayoutConstraint.m in Sources */,
 				73F38D9E1E1F31CB00ABD533 /* LiuqsFileManager.m in Sources */,
 				734D0F7E1E00E67400A898B0 /* LiuqsEmoticonKeyBoard.m in Sources */,
 				735831681E0230D500A093FB /* YYTextArchiver.m in Sources */,

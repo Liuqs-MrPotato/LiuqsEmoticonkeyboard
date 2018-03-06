@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ChatMessageFrame.h"
+#import "ChatMessage.h"
 
-@interface ChatMessageCell : UITableViewCell
+@interface ChatMessageCellOther : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableview;
 
-@property(nonatomic, strong) ChatMessageFrame *MessageFrame;
+@property(nonatomic, strong)ChatMessage *message;
 
-@property(nonatomic, copy)void(^deleteMessage)(ChatMessageFrame *MessageFrame);
+@property(nonatomic, copy)void(^deleteMessage)(ChatMessage *message);
 
 @end

@@ -13,10 +13,12 @@
 - (void)setUserType:(userType)userType {
 
     _userType = userType;
-    
-    _userHeadImage = userType == userTypeMe ? @"路飞" : @"鸣人";
-    
-    _userName = userType == userTypeMe ? @"路飞" : @"";
+    _userHeadImage = userType == userTypeMe ? @"鸣人" : @"路飞";
+    _userName = userType == userTypeMe ? @"" : @"路飞";
+}
+- (void)setMessageContent:(NSString *)messageContent {
+    _messageContent = messageContent;
+    _attMessage = [LiuqsDecoder decodeWithPlainStr:messageContent font:[UIFont systemFontOfSize:17.0f]];
 }
 
 @end

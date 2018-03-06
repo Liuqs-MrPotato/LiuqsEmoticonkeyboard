@@ -1,16 +1,16 @@
 //
-//  ChatMessageCell.m
+//  ChatMessageCellMe.m
 //  LiuqsEmoticonkeyboard
 //
-//  Created by 刘全水 on 2016/12/15.
-//  Copyright © 2016年 刘全水. All rights reserved.
+//  Created by liuqs on 2018/3/6.
+//  Copyright © 2018年 刘全水. All rights reserved.
 //
 
-#import "ChatMessageCell.h"
+#import "ChatMessageCellMe.h"
 
 static UITableView *_tableview;
 
-@interface ChatMessageCell ()
+@interface ChatMessageCellMe ()
 
 @property(nonatomic, strong) UIImageView *headImageView;
 
@@ -22,12 +22,12 @@ static UITableView *_tableview;
 
 @end
 
-@implementation ChatMessageCell
+@implementation ChatMessageCellMe
 
 #pragma mark ==== 懒加载控件 ====
 
 - (UIButton *)airView {
-
+    
     if (!_airView) {
         _airView = [[UIButton alloc]init];
         //shadowColor阴影颜色
@@ -43,7 +43,7 @@ static UITableView *_tableview;
 }
 
 - (UIImageView *)headImageView  {
-
+    
     if (!_headImageView) {
         _headImageView = [[UIImageView alloc]init];
         _headImageView.layer.cornerRadius = 20;
@@ -54,7 +54,7 @@ static UITableView *_tableview;
 }
 
 - (UILabel *)nameLabel {
-
+    
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc]init];
         _nameLabel.font = [UIFont systemFontOfSize:14.0f];
@@ -65,92 +65,109 @@ static UITableView *_tableview;
 }
 
 - (YYLabel *)messageContentLabel {
-
+    
     if (!_messageContentLabel) {
         _messageContentLabel = [[YYLabel alloc]init];
         _messageContentLabel.numberOfLines = 0;
         _messageContentLabel.textVerticalAlignment = YYTextVerticalAlignmentCenter;
         _messageContentLabel.userInteractionEnabled = NO;
+        _messageContentLabel.preferredMaxLayoutWidth = screenW - 130;
     }
     return _messageContentLabel;
 }
 
 
 + (instancetype)cellWithTableView:(UITableView *)tableview {
-
-    NSString *ID = @"ChatMessageCell";
+    
+    NSString *ID = @"ChatMessageCellMe";
     _tableview = tableview;
-    ChatMessageCell *cell = [tableview dequeueReusableCellWithIdentifier:ID];
+    ChatMessageCellMe *cell = [tableview dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
-        cell = [[ChatMessageCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[ChatMessageCellMe alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     return cell;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-
+    
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self initSomeThing];
         [self addSubViews];
         [self addGestureRecognizers];
+        [self LayoutSubviews];
     }
     return self;
 }
 
 - (void)initSomeThing {
-
+    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = [UIColor clearColor];
 }
 
 - (void)addSubViews {
+    
+    [self.contentView addSubview:self.headImageView];
+    [self.contentView addSubview:self.nameLabel];
+    [self.contentView addSubview:self.airView];
+    [self.contentView addSubview:self.messageContentLabel];
+}
 
-    [self addSubview:self.headImageView];
-    [self addSubview:self.nameLabel];
-    [self addSubview:self.airView];
-    [self addSubview:self.messageContentLabel];
+- (void)LayoutSubviews {
+    [self.headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentView.mas_top).offset(10);
+        make.right.equalTo(self.contentView.mas_right).offset(-10);
+        make.width.height.equalTo(@40);
+    }];
+    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentView.mas_top).offset(10);
+        make.right.equalTo(self.headImageView.mas_left).offset(-5);
+        make.left.equalTo(self.contentView.mas_left).offset(20);
+        make.bottom.equalTo(self.contentView.mas_top).offset(30);
+    }];
+    [self.messageContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.headImageView.mas_left).offset(-15);
+        make.width.lessThanOrEqualTo(@(screenW - 130));
+        make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+    }];
+    [self.airView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.messageContentLabel.mas_right).offset(18);
+        make.left.equalTo(self.messageContentLabel.mas_left).offset(-9);
+        make.top.equalTo(self.messageContentLabel.mas_top).offset(-5);
+        make.bottom.equalTo(self.messageContentLabel.mas_bottom).offset(5);
+    }];
+    
 }
 
 - (void)addGestureRecognizers {
-
+    
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(showMenuController:)];
     [self.airView addGestureRecognizer:longPress];
 }
 
-- (void)setMessageFrame:(ChatMessageFrame *)MessageFrame {
-
-    _MessageFrame = MessageFrame;
-    self.headImageView.frame = MessageFrame.headViewFrame;
-    self.nameLabel.frame = MessageFrame.nameLabelFrame;
-    self.messageContentLabel.frame = MessageFrame.messageLabelFrame;
-    self.airView.frame = MessageFrame.airViewFrame;
-    
-    self.nameLabel.text = MessageFrame.message.userName;
-    self.headImageView.image = [UIImage imageNamed:MessageFrame.message.userHeadImage];
-    
-    NSString *norImageName  = MessageFrame.message.userType == userTypeOther ? @"chat_send_nor" : @"chat_receive_nor";
-    NSString *seleImageName = MessageFrame.message.userType == userTypeOther ? @"chat_send_p" : @"chat_receive_p";
-    
-    UIImage *norImage  = [UIImage resizebleImageWithName:norImageName];
-    UIImage *seleImage = [UIImage resizebleImageWithName:seleImageName];
+- (void)setMessage:(ChatMessage *)message {
+    _message = message;
+    self.headImageView.image = [UIImage imageNamed:message.userHeadImage];
+    self.nameLabel.text = message.userName;
+    UIImage *norImage  = [UIImage resizebleImageWithName:@"chat_send_nor"];
     [self.airView setBackgroundImage:norImage forState:UIControlStateNormal];
-    [self.airView setBackgroundImage:seleImage forState:UIControlStateHighlighted];
-    self.messageContentLabel.attributedText = MessageFrame.attMessage;
+    self.messageContentLabel.attributedText = message.attMessage;
 }
 
 #pragma mark ==== 长按菜单事件 ====
 
 - (void)showMenuController:(UIGestureRecognizer *)recognizer {
-
-    if (recognizer.state == UIGestureRecognizerStateBegan) {
     
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        
         [self becomeFirstResponder];
         
         UIMenuItem *itemCopy = [[UIMenuItem alloc] initWithTitle:@"复制" action:@selector(copyText)];
         
         UIMenuItem *itemCallBack = [[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(delete)];
-
+        
         UIMenuController *menuController = [UIMenuController sharedMenuController];
         
         [menuController setMenuItems:@[itemCopy,itemCallBack]];
@@ -166,12 +183,12 @@ static UITableView *_tableview;
             menuController.arrowDirection = UIMenuControllerArrowUp;
             
         }else {
-        
+            
             menuY = self.airView.Ex_y + 6;
             
             menuController.arrowDirection = UIMenuControllerArrowDown;
         }
-    
+        
         CGRect menuLocation = CGRectMake(self.airView.center.x, menuY, 0, 0);
         
         [menuController setTargetRect:menuLocation inView:self];
@@ -198,17 +215,18 @@ static UITableView *_tableview;
 - (void)copyText {
     
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = self.MessageFrame.message.messageContent;
+    pasteboard.string = self.message.messageContent;
 }
 
 - (void)delete {
     
     if (self.deleteMessage) {
-        self.deleteMessage(self.MessageFrame);
+        self.deleteMessage(self.message);
     }
-    NSString *deletestr = [NSString stringWithFormat:@"DELETE FROM %@ WHERE userId = '%zd'",tb_message,self.MessageFrame.message.userId];
+    NSString *deletestr = [NSString stringWithFormat:@"DELETE FROM %@ WHERE userId = '%zd'",tb_message,self.message.userId];
     [LiuqsMessageDataBase deleteData:deletestr];
 }
 
 
 @end
+
