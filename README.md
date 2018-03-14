@@ -7,7 +7,7 @@
 self.keyboard = [LiuqsEmoticonKeyBoard showKeyBoardInView:self.view];
 self.keyboard.delegate = self;  
 ```
-######想要集成到你的项目中需要做如下操作：
+#想要集成到你的项目中需要做如下操作：
 
 1.把YYTextClasses和LiuqsEmitionClasses两个文件夹下的文件拖拽到你的项目中！
 
@@ -17,4 +17,4 @@ self.keyboard.delegate = self;
 
 4.编译运行.
 
-######具体详细的介绍请看简书文章：[简书地址](http://www.jianshu.com/p/d30be01c858f)
+#具体详细的介绍请看简书文章：[简书地址](http://www.jianshu.com/p/d30be01c858f)
