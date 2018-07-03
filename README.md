@@ -7,7 +7,8 @@
 简单集成键盘方法：
 ```
 self.keyboard = [LiuqsEmoticonKeyBoard showKeyBoardInView:self.view];
-self.keyboard.delegate = self;  
+self.keyboard.KeyBoardNeedMoveUp = YES;
+self.keyboard.delegate = self;
 ```
 想要集成到你的项目中需要做如下操作：
 
