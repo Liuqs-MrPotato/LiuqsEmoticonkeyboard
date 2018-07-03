@@ -17,6 +17,9 @@
 
 @property(nonatomic, strong) UIView *bottomLine;
 
+//需要上移的高度
+@property(nonatomic, assign) CGFloat upOffSetHeight;
+
 @end
 
 @implementation LiuqsTopBarView
@@ -86,10 +89,20 @@
     
 }
 
+- (void)setKeyBoardNeedMoveUp:(BOOL)KeyBoardNeedMoveUp {
+    _KeyBoardNeedMoveUp = KeyBoardNeedMoveUp;
+    _upOffSetHeight = _KeyBoardNeedMoveUp ? 64 : 0;
+    if (_KeyBoardNeedMoveUp) {
+        self.frame = CGRectMake(0, screenH - topBarH - _upOffSetHeight, screenW, CGRectGetMaxY(self.textView.frame) + 5);
+    }
+}
+
 //初始化数据设置
 - (void)initSomething {
 
     self.userInteractionEnabled = YES;
+    _KeyBoardNeedMoveUp = NO;
+    _upOffSetHeight = 0;
     self.backgroundColor = ColorRGB(236, 237, 241);
     self.CurrentKeyBoardH = keyBoardH;
 }
@@ -104,7 +117,7 @@
 //约束位置
 - (void)layoutViews {
     
-    self.frame = CGRectMake(0, screenH - topBarH, screenW, CGRectGetMaxY(self.textView.frame) + 5);
+    self.frame = CGRectMake(0, screenH - topBarH - _upOffSetHeight, screenW, CGRectGetMaxY(self.textView.frame) + 5);
     self.bottomLine.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 0.5, screenW, 0.5);
     self.topLine.frame = CGRectMake(0, 0, screenW, 0.5);
     self.topBarEmotionBtn.frame = CGRectMake(CGRectGetMaxX(_textView.frame) + 5, CGRectGetHeight(self.frame) - 5 - emotionBtnH, emotionBtnW, emotionBtnH);
@@ -114,7 +127,7 @@
 - (void)updateSubviews {
 
     CGFloat differenceH = self.textView.Ex_height - TextViewH;
-    self.frame = CGRectMake(0, screenH - self.CurrentKeyBoardH - topBarH - differenceH, screenW, CGRectGetMaxY(self.textView.frame) + 5);
+    self.frame = CGRectMake(0, screenH - self.CurrentKeyBoardH - topBarH - differenceH - _upOffSetHeight, screenW, CGRectGetMaxY(self.textView.frame) + 5);
     self.bottomLine.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 0.5, screenW, 0.5);
     self.topLine.frame = CGRectMake(0, 0, screenW, 0.5);
     self.topBarEmotionBtn.frame = CGRectMake(CGRectGetMaxX(_textView.frame) + 5, CGRectGetHeight(self.frame) - 5 - emotionBtnH, emotionBtnW, emotionBtnH);

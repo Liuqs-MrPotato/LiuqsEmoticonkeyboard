@@ -24,7 +24,7 @@
     TabbarViewController *tabbarVC = [[TabbarViewController alloc]init];
     self.window.rootViewController = tabbarVC;
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_background"] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTranslucent:YES];
+    [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     return YES;
 }

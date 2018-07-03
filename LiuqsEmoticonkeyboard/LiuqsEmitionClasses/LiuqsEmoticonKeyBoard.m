@@ -35,6 +35,9 @@
  */
 @property(nonatomic, assign) BOOL onlyHideSysKboard;
 
+//需要上移的高度
+@property(nonatomic, assign) CGFloat upOffSetHeight;
+
 @end
 
 @implementation LiuqsEmoticonKeyBoard
@@ -119,6 +122,15 @@
     return self;
 }
 
+- (void)setKeyBoardNeedMoveUp:(BOOL)KeyBoardNeedMoveUp {
+    _KeyBoardNeedMoveUp = KeyBoardNeedMoveUp;
+    _upOffSetHeight = _KeyBoardNeedMoveUp ? 64 : 0;
+    if (_KeyBoardNeedMoveUp) {
+        self.frame = CGRectMake(0, screenH - _upOffSetHeight, screenW, keyBoardH);
+        self.topBar.KeyBoardNeedMoveUp = _KeyBoardNeedMoveUp;
+    }
+}
+
 #pragma mark ==== 自定义方法 ====
 
 + (instancetype)showKeyBoardInView:(UIView *)view {
@@ -126,9 +138,7 @@
     if (!view) {return nil;}
     LiuqsEmoticonKeyBoard *keyboard = [[LiuqsEmoticonKeyBoard alloc]init];
     [view addSubview:keyboard];
-    [view addSubview:keyboard.topBar
-     
-     ];
+    [view addSubview:keyboard.topBar];
     return keyboard;
 }
 - (void)methods {
@@ -146,8 +156,8 @@
         [self.topBar.textView resignFirstResponder];
     }
     [UIView animateWithDuration:keyBoardTipTime animations:^{
-        self.topBar.Ex_y = screenH - self.topBar.Ex_height;
-        self.Ex_y = screenH;
+        self.topBar.Ex_y = screenH - self.topBar.Ex_height - _upOffSetHeight;
+        self.Ex_y = screenH - _upOffSetHeight;
         self.topBar.topBarEmotionBtn.selected = NO;
         self.topBar.CurrentKeyBoardH = keyBoardH;
         [self UpdateSuperView];
@@ -201,15 +211,16 @@
     self.topBar.topBarEmotionBtn.selected = NO;
     [UIView animateWithDuration:keyBoardTipTime animations:^{
         
-        self.topBar.Ex_y = screenH - frame.size.height - self.topBar.Ex_height;
-        self.Ex_y = screenH - keyBoardH;
+        self.topBar.Ex_y = screenH - frame.size.height - self.topBar.Ex_height - _upOffSetHeight;
+        self.Ex_y = screenH - keyBoardH - _upOffSetHeight;
         [self UpdateSuperView];
     }];
 }
 
 //初始化参数
 - (void)initSomeThing {
-    
+    _KeyBoardNeedMoveUp = NO;
+    _upOffSetHeight = 0;
     if (!self.font) {self.font = [UIFont systemFontOfSize:17.0f];}
     _emotionSize = [self heightWithFont:self.font];
     self.userInteractionEnabled = YES;
@@ -225,7 +236,7 @@
 }
 - (void)initSubViewFrames {
 
-    self.frame = CGRectMake(0, screenH, screenW, keyBoardH);
+    self.frame = CGRectMake(0, screenH - _upOffSetHeight, screenW, keyBoardH);
     self.baseView.frame = CGRectMake(0, 0, screenW, rows * emotionW +(rows + 1) * pageH);
     self.baseView.contentSize = CGSizeMake(screenW * pages + 1, rows * emotionW +(rows + 1) * pageH);
     self.sendButton.frame = CGRectMake(screenW - sendBtnW, CGRectGetHeight(self.frame) - bottomBarH, sendBtnW, bottomBarH);
@@ -318,8 +329,8 @@
     self.onlyHideSysKboard = NO;
     [UIView animateWithDuration:keyBoardTipTime animations:^{
        
-        self.topBar.Ex_y = screenH - self.topBar.Ex_height - self.topBar.CurrentKeyBoardH;
-        self.Ex_y = screenH - self.Ex_height;
+        self.topBar.Ex_y = screenH - self.topBar.Ex_height - self.topBar.CurrentKeyBoardH - _upOffSetHeight;
+        self.Ex_y = screenH - self.Ex_height - _upOffSetHeight;
     }];
     self.topBar.topBarEmotionBtn.selected = YES;
     [self UpdateSuperView];
@@ -334,8 +345,8 @@
     }
     [UIView animateWithDuration:keyBoardTipTime animations:^{
         
-        self.topBar.Ex_y = screenH - self.topBar.Ex_height - self.topBar.CurrentKeyBoardH;
-        self.Ex_y = screenH - self.Ex_height;
+        self.topBar.Ex_y = screenH - self.topBar.Ex_height - self.topBar.CurrentKeyBoardH - _upOffSetHeight;
+        self.Ex_y = screenH - self.Ex_height - _upOffSetHeight;
     }];
     self.topBar.topBarEmotionBtn.selected = NO;
     [self UpdateSuperView];

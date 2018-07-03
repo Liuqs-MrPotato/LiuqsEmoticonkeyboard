@@ -41,6 +41,15 @@
  * 当前键盘的高度， 区分是文字键盘还是表情键盘
  */
 @property(nonatomic, assign) CGFloat CurrentKeyBoardH;
+
+/*
+ * 是否需要解决视图向下偏移的问题
+ * NO:y坐标在屏幕顶部
+ * YES:y坐标（0,0）在导航底部
+ * 默认值：NO
+ */
+@property(nonatomic, assign)BOOL KeyBoardNeedMoveUp;
+
 /*
  * 用于主动触发输入框改变的方法
  */

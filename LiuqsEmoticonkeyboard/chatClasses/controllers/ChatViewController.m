@@ -30,7 +30,7 @@
 
     if (!_chatList) {
         _chatList = [[UITableView alloc]init];
-        _chatList.frame = CGRectMake(0, 64, screenW, screenH - topBarH - 64);
+        _chatList.frame = CGRectMake(0, 0, screenW, screenH - topBarH - 64);
         _chatList.backgroundColor = ColorRGB(236, 237, 241);
         _chatList.tableFooterView = [[UIView alloc]init];
         _chatList.delegate = self;
@@ -72,6 +72,7 @@
 - (void)addSubviews {
 
     self.keyboard = [LiuqsEmoticonKeyBoard showKeyBoardInView:self.view];
+    self.keyboard.KeyBoardNeedMoveUp = YES;
     self.keyboard.delegate = self;
     [self.view addSubview:self.chatList];
     
@@ -141,11 +142,11 @@
     //判断是否需要滚动到底部，给一个误差值
     if (self.chatList.contentOffset.y > offSetY - 5 || self.chatList.contentOffset.y > offSetY + 5) {
         
-        self.chatList.Ex_height = self.keyboard.topBar.Ex_y - 64;
+        self.chatList.Ex_height = self.keyboard.topBar.Ex_y;
         [self ScrollTableViewToBottom];
     }else {
     
-        self.chatList.Ex_height = self.keyboard.topBar.Ex_y - 64;
+        self.chatList.Ex_height = self.keyboard.topBar.Ex_y;
     }
 }
 
